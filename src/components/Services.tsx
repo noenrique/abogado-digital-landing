@@ -6,17 +6,17 @@ const Services = () => {
     {
       icon: Scale,
       title: "Consultoría Legal",
-      description: "Asesoramiento estratégico para empresas y particulares. Análisis de riesgos, cumplimiento normativo y planificación legal integral."
+      description: "Asesoramiento estratégico integral para empresas y particulares en todas las áreas del derecho. Nuestros expertos realizan análisis exhaustivos de riesgos legales, aseguran el cumplimiento normativo completo y desarrollan estrategias de planificación legal a largo plazo. Ofrecemos soluciones preventivas que protegen sus intereses, minimizan riesgos y optimizan la toma de decisiones empresariales con total respaldo jurídico."
     },
     {
       icon: Briefcase,
       title: "Derecho Laboral",
-      description: "Representación en conflictos laborales, negociación de contratos, despidos y defensa de derechos de trabajadores y empleadores."
+      description: "Representación especializada en todos los aspectos del derecho laboral, tanto para trabajadores como para empleadores. Gestionamos conflictos laborales, negociamos y redactamos contratos de trabajo, asesoramos en procesos de despido y reestructuración, y defendemos activamente los derechos de nuestros clientes ante tribunales laborales. Nuestro enfoque busca soluciones equilibradas que protejan los intereses legales y promuevan relaciones laborales justas y sostenibles."
     },
     {
       icon: Home,
       title: "Derecho Civil",
-      description: "Asistencia en contratos, herencias, derecho de familia, propiedad y resolución de disputas civiles con enfoque personalizado."
+      description: "Asistencia legal completa en todas las materias del derecho civil con un enfoque personalizado y cercano. Ofrecemos asesoramiento en redacción y revisión de contratos, gestión de herencias y sucesiones, asuntos de derecho de familia incluyendo divorcios y custodias, transacciones de propiedad inmobiliaria, y resolución efectiva de disputas civiles mediante negociación, mediación o litigio. Cada caso recibe atención individualizada para garantizar los mejores resultados."
     }
   ];
 
