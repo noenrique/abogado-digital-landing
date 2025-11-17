@@ -1,73 +1,141 @@
-# Welcome to your Lovable project
+# Bufete Legal - Sitio Web
 
-## Project info
+Sitio web profesional para un bufete legal, desarrollado con React, TypeScript y Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/01c2b07b-9f4b-4872-8349-56641a0a752b
+## 🚀 Características
 
-## How can I edit this code?
+- Diseño profesional y responsivo
+- Secciones: Servicios, Nosotros, Testimonios y Contacto
+- Formulario de contacto con validación
+- Integración con Google Tag Manager para seguimiento de conversiones
+- Paleta de colores corporativa: azul oscuro (#0a2a43), blanco y dorado
+- Optimizado para SEO
 
-There are several ways of editing your application.
+## 📋 Requisitos Previos
 
-**Use Lovable**
+- Node.js (versión 16 o superior)
+- npm o yarn
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/01c2b07b-9f4b-4872-8349-56641a0a752b) and start prompting.
+## 🔧 Instalación
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone este repositorio o descargue los archivos del proyecto
 
-**Use your preferred IDE**
+2. Instale las dependencias:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 💻 Desarrollo
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Para iniciar el servidor de desarrollo:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+El sitio estará disponible en `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🏗️ Compilación para Producción
 
-**Use GitHub Codespaces**
+Para crear una versión optimizada para producción:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm run build
+```
 
-## What technologies are used for this project?
+Los archivos compilados se generarán en la carpeta `dist/`
 
-This project is built with:
+## 📊 Integración con Google Tag Manager
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Configuración de GTM
 
-## How can I deploy this project?
+1. Cree una cuenta en [Google Tag Manager](https://tagmanager.google.com/)
+2. Obtenga su código de contenedor GTM (formato: GTM-XXXXXXX)
+3. Abra el archivo `index.html` en la raíz del proyecto
+4. Busque el comentario que dice `<!-- Google Tag Manager - Inserte su código GTM aquí -->`
+5. Reemplace el código de ejemplo con su código GTM real:
 
-Simply open [Lovable](https://lovable.dev/projects/01c2b07b-9f4b-4872-8349-56641a0a752b) and click on Share -> Publish.
+```html
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+```
 
-## Can I connect a custom domain to my Lovable project?
+6. Reemplace `GTM-XXXXXXX` con su ID de contenedor real
 
-Yes, you can!
+### Evento de Conversión
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+El formulario de contacto está configurado para enviar un evento `lead` al dataLayer cuando se envía correctamente:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+```javascript
+window.dataLayer.push({ event: 'lead' });
+```
+
+Para configurar este evento en Google Ads:
+
+1. En GTM, cree un nuevo activador de tipo "Evento personalizado"
+2. Nombre del evento: `lead`
+3. Cree una nueva etiqueta de conversión de Google Ads
+4. Configure el activador creado en el paso anterior
+5. Publique los cambios en GTM
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/        # Componentes React
+│   ├── Header.tsx    # Navegación principal
+│   ├── Hero.tsx      # Sección hero
+│   ├── Services.tsx  # Tarjetas de servicios
+│   ├── About.tsx     # Sección sobre nosotros
+│   ├── Testimonials.tsx  # Testimonios de clientes
+│   ├── Contact.tsx   # Información de contacto
+│   ├── ContactForm.tsx   # Formulario con validación
+│   └── Footer.tsx    # Pie de página
+├── pages/
+│   └── Index.tsx     # Página principal
+├── lib/
+│   └── utils.ts      # Utilidades
+└── index.css         # Estilos globales
+```
+
+## 🎨 Personalización
+
+### Colores
+
+Los colores principales se definen en `src/index.css`:
+
+- Primary (Azul oscuro): `hsl(207, 74%, 15%)`
+- Accent (Dorado): `hsl(43, 74%, 49%)`
+
+### Contenido
+
+Edite los siguientes archivos para personalizar el contenido:
+
+- `src/components/Services.tsx` - Servicios ofrecidos
+- `src/components/About.tsx` - Información del bufete
+- `src/components/Testimonials.tsx` - Testimonios de clientes
+- `src/components/Contact.tsx` - Datos de contacto
+
+## 🌐 Despliegue
+
+Este proyecto es compatible con servicios de hosting como:
+
+- Vercel
+- Netlify
+- GitHub Pages
+- Exportación desde Lovable
+
+Para desplegar, compile el proyecto con `npm run build` y suba la carpeta `dist/` a su servicio de hosting preferido.
+
+## 📝 Licencia
+
+Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+
+## 🤝 Soporte
+
+Para dudas o soporte, contacte con el equipo de desarrollo.
